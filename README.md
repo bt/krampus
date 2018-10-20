@@ -9,7 +9,7 @@ Setting up Krampus is generally pretty simple and should only take a few minutes
 ### IAM setup
 Krampus works by assuming a role in the target AWS account with the appropriate permissions for completing the various kill and disable tasks it supports. This is done via STS, with the temporary credentials stored in memory for use during runtime. The first thing that needs to be done is setting up the role. Every account--including the home account--that Krampus is expected to work with must have this role. Begin the role creation process from the IAM console.
 
-At this point you have a choice to make. If Krampus is to be run from Lambda, then at the first screen choose "AWS service" as the type of trusted entity, then select “Lambda” from the list of options. Don't select any permissions; simply go to the next screen and name the role. In the list of roles, select the new Krampus role and and add an inline policy. Paste in the following policy document. The name does not matter, so do whatever makes the most sense to you.
+At this point you have a choice to make. If Krampus is to be run from Lambda, then at the first screen choose "AWS service" as the type of trusted entity, then select “Lambda” from the list of options. Don't select any permissions; simply go to the next screen and name the role. In the list of roles, select the new Krampus role and add an inline policy. Paste in the following policy document. The name does not matter, so do whatever makes the most sense to you.
 ```javascript
 {
   "Version":"2012-10-17",
